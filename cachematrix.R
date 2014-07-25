@@ -1,5 +1,6 @@
 ## Memory set aside for storing the values of a matrix x and inverse of x (inv) will remain
-## even after the function terminates. 
+## even after the function terminates. These functions serve the purpose of storing a matrix and its inverse
+## for multiple calculations and/or needs in a programming environment.
 
 ## Function makeCacheMatrix takes a matrix (default is empty matrix)
 ## returns a list of 4 objects: set, get, setinverse, getinverse
@@ -12,6 +13,8 @@ makeCacheMatrix <- function(x = matrix()) {
             inv <<- NULL
       }
       get <- function() { return(x) }
+        ## Programmers' prerogative to include { return(x) } instead of just shorthand "x"
+        
       setinverse <- function(inverse) { inv <<- inverse }
       getinverse <- function() { return(inv) }
       return(list(set = set, get = get, setinverse = setinverse, getinverse = getinverse))
